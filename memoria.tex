@@ -1,4 +1,6 @@
 \documentclass[oneside,numbers,spanish]{ezthesis}
+\usepackage[utf8]{inputenc}
+\usepackage{paralist}
 %% # Opciones disponibles para el documento #
 %%
 %% Las opciones con un (*) son las opciones predeterminadas.
@@ -47,13 +49,13 @@
 %% Nota que los acentos se deben escribir: \'a, \'e, \'i, etc.
 %% La letra n con tilde es: \~n.
 
-\author{Juan Antonio Navarro P\'erez}
-\title{Ejemplo de una Tesis}
-\degree{Doctor en Ciencias}
+\author{Roberto Castellor Morant}
+\title{Sistema básico de almacenamiento en la nube usando Java RMI}
+\degree{Grado de Ingeniería Informática}
 \supervisor{Nombre de mi Asesor}
-\institution{Universidad de Alg\'un Sitio}
-\faculty{Escuela de Ingenier\'ia y Ciencias}
-\department{Departamento de Sistemas Computacionales}
+\institution{Universidad Nacional de Educación a Distancia}
+\faculty{Grado de Ingeniería Informática}
+\department{Departamento de Sistemas de Comunicación y Control}
 
 %% # M'argenes del documento #
 %% 
@@ -80,7 +82,7 @@
 %% Por cada prefacio (p.e. agradecimientos, resumen, etc.) crear
 %% un nuevo archivo e incluirlo aqu'i.
 %% Para m'as detalles y un ejemplo mirar el archivo "gracias.tex".
-\include{gracias}
+%%\include{gracias}
 
 %% # 'Indices y listas de contenido #
 %% Quitar los comentarios en las lineas siguientes para obtener listas de
@@ -94,15 +96,16 @@
 %% Mirar el archivo "intro.tex" para un ejemplo y recomendaciones para
 %% escribir.
 \include{intro}
-%\include{capitulo1}
-%\include{capitulo2}
-%\include{capitulo3}
+\include{casosuso}
+\include{diseno}
+\include{implementacion}
+\include{ejemplos}
 %\include{conclu}
 
 \appendix
 %% Cap'itulos incluidos despues del comando \appendix aparecen como ap'endices
 %% de la tesis.
-%\include{apendiceA}
+\include{herramientas}
 %\include{apendiceB}
 %\include{apendiceC}
 
