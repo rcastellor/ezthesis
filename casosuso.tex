@@ -16,9 +16,42 @@
 
 \section{Registrar/autenticar repositorio}
 
+\begin{compactenum}
+	\item El caso de uso comienza cuando el usuario del repositorio selecciona la opcion de registrar repositorio
+	\item El sistema solicita al usuario los datos de autenticacion
+	\item El sistema busca el servicio de autenticación en el registro RMI
+	\item El sistema comprueba los parametros de entrada con el objeto remoto
+	\item El sistema publica los objetos remotos para operar con el servidor en el registro
+	\item El sistema entra en modo consulta para operaciones con el repositorio activo
+\end{compactenum}
+
 \section{Registrar/autenticar cliente}
 
+\begin{compactenum}
+	\item El caso de uso comienza cuando el usuario del cliente selecciona la opcion de registrar cliente
+	\item El sistema solicita al usuario los datos de autenticacion
+	\item El sistema busca el servicio de autenticación en el registro RMI
+	\item El sistema comprueba los parametros de entrada con el objeto remoto
+	\item El sistema publica los objetos remotos para operar con el servidor en el registro
+	\item El sistema entra en modo consulta para operaciones con el cliente activo
+\end{compactenum}
+
+
+
 \section{Subir fichero a la nube}
+\begin{compactenum}
+	\item El caso de uso comienza cuando el usuario selecciona la opción subir fichero
+	\item El sistema pregunta al usuario cual es el fichero que quiere subir a la nube
+	\item El usuario selecciona el nombre del fichero
+	\item El sistema crea un objeto serializable en memoria con el fichero a enviar
+	\item El sistema busca el objeto distribuido gestor
+	\item El sistema consulta al servicio gestor por la dirección del servicio operador cliente del repositorio
+	\item El sistema busca el objeto distribuido cliente operador del repositorio
+	\item El sistema envia el objeto Serializable al repositorio
+	\item El sistema notifica al sistema gestor el resultado del envio
+	\item El servicio gestor actualiza el servicio de datos con la localización del archivo
+	\item El sistema notifica al usuario el resultado de la operación
+\end{compactenum}
 
 \section{Descargar fichero desde la nube}
 
