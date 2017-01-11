@@ -1,6 +1,10 @@
 \documentclass[oneside,numbers,spanish]{ezthesis}
 \usepackage[utf8]{inputenc}
 \usepackage{paralist}
+\usepackage{listings}
+
+\lstset{language=C++,texcl=true}
+
 %% # Opciones disponibles para el documento #
 %%
 %% Las opciones con un (*) son las opciones predeterminadas.
@@ -62,7 +66,7 @@
 %% Quitar el comentario en la siguiente linea para austar los m'argenes del
 %% documento. Leer la documentaci'on de "geometry" para m'as informaci'on.
 
-%\geometry{top=40mm,bottom=33mm,inner=40mm,outer=25mm}
+\geometry{top=40mm,bottom=33mm,inner=40mm,outer=25mm}
 
 %% El siguiente comando agrega ligas activas en el documento para las
 %% referencias cruzadas y citas bibliogr'aficas. Tiene que ser *la 'ultima*
@@ -100,7 +104,7 @@
 \include{diseno}
 \include{implementacion}
 \include{ejemplos}
-%\include{conclu}
+%%\include{conclu}
 
 \appendix
 %% Cap'itulos incluidos despues del comando \appendix aparecen como ap'endices

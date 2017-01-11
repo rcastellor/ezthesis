@@ -52,7 +52,25 @@
 \end{compactenum}
 
 \section{Descargar fichero desde la nube}
+\begin{compactenum}
+\item El caso de uso comienza cuando el usuario selecciona la opcion de descargar fichero
+\item El sistema pregunta al servicio gestor por los ficheros a los que tiene acceso el cliente
+\item El sistema pregunta al usuario cual de los ficheros quiere descargar
+\item El usuario selecciona un fichero de la lista
+\item El sistema pide al servicio gestor que se envie el fichero al servicio disco cliente
+\end{compactenum}
 
 \section{Borrar fichero de la nube}
+\begin{compactenum}
+\item El caso de uso comienza cuando el usuario seleccion la opción de borrar fichero
+\item El sistema pregunta al servicio gestor por los ficheros del usuario
+\item El sistema pregunta al usuario cual es el fichero que quiere borrar
+\item El sistema pide al servicio gestor la url del objeto distribuido del servicio operador-cliente de su repositorio
+\item El sistema busca en el registro RMI el servicio operador-cliente del repositorio donde esta el fichero
+\item El sistema pide al servicio operador-cliente que borre el fichero
+\item El sistema notifica al servicio gestor del resultado de la operación de borrado
+\item El servicio gestor notifica al servicio de datos que el fichero se ha borrado fisicamente
+\end{compactenum}
+
 
 \section{Compartir fichero con otro cliente}

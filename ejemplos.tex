@@ -1,26 +1,53 @@
 \chapter{Ejemplos de uso}
 
-En este capitulo mostraremos ejemplos de uso de la aplicación
-
-Operaciones del servidor:
-
-\begin{lstlisting}[language=bash]
-
+En este capitulo mostraremos ejemplos de uso de la aplicación, para los ejemplos he registrado en el servidor cuatro repositorios y siete clientes, cada cliente tendra asociados varios ficheros.
+\section{Operaciones del servidor}
+\begin{lstlisting}[language=bash,frame=single,texcl=true,basicstyle=\small]
 ============Menu Servidor============
 1-Listar Clientes
 2-Listar Repositorios
 3-Listar Parejas Repositorio-Cliente
 4-Salir
 ============Menu Servidor============
-Seleccione una opción: 2
--- Repositorios registrados en el sistema
-Repositorio: 0-rep1
+Seleccione una opcion: 1
+Cliente: 0-cliente1
+Cliente: 1-cliente2
+Cliente: 2-cliente3
+Cliente: 3-cliente4
+Cliente: 4-cliente5
+Cliente: 5-cliente6
+Cliente: 6-cliente7
 ============Menu Servidor============
 1-Listar Clientes
 2-Listar Repositorios
 3-Listar Parejas Repositorio-Cliente
 4-Salir
 ============Menu Servidor============
-Seleccione una opción:
-
+Seleccione una opcion: 2
+-- Repositorios registrados en el sistema: 
+Repositorio: 0-repositorio1
+Repositorio: 1-repositorio2
+Repositorio: 2-repositorio3
+Repositorio: 3-repositorio4
+============Menu Servidor============
+1-Listar Clientes
+2-Listar Repositorios
+3-Listar Parejas Repositorio-Cliente
+4-Salir
+============Menu Servidor============
+Seleccione una opcion: 3
+Cliente: 0-cliente1<->0-repositorio1
+Cliente: 1-cliente2<->1-repositorio2
+Cliente: 2-cliente3<->2-repositorio3
+Cliente: 3-cliente4<->3-repositorio4
+Cliente: 4-cliente5<->0-repositorio1
+Cliente: 5-cliente6<->1-repositorio2
+Cliente: 6-cliente7<->2-repositorio3
+============Menu Servidor============
+1-Listar Clientes
+2-Listar Repositorios
+3-Listar Parejas Repositorio-Cliente
+4-Salir
+============Menu Servidor============
+Seleccione una opcion: 
 \end{lstlisting}
