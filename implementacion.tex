@@ -1,3 +1,60 @@
 \chapter{Detalles de implementación}
 
-Aqui vendran los detalles de la implementación de la solución
+\section{Estructura de directorios}
+
+Las Carpeta comun contiene las clases e interfaces comunes al resto del proyecto.
+
+\begin{compactitem}
+	\item \textbf{Cliente}, clase con la información de los clientes, el usuario, el id y listas con los ficheros del cliente
+	\item \textbf{Fichero}, clase proporcionada por el equipo docente para enviar los ficheros
+	\item \textbf{GUI}, clase con métodos genéricos para mostrar por pantalla información y recoger las entradas del usuario
+	\item \textbf{Logger}, clase con métodos para volcar a un fichero log de la aplicación y de esta forma no mezclarse con la interfaz del usuario
+	\item \textbf{Metadato}, clase con información referente a los ficheros, tendrá el repositorio, el id del cliente propietario del fichero, etc.
+	\item \textbf{Repositorio}, clase con datos de los repositorios registrados en el sistema, los id, el usuario y las url de los objetos remotos que publica el repositorio.
+	\item \textit{ServicioAutenticacionInterface}, interfaz del servicio de autenticación.
+	\item \textit{ServicioDatosInterface}, interfaz del servicio de datos
+	\item \textit{ServicioGestorInterface}, interfaz del servicio gestor
+	\item \textit{ServicioClOperadorInterface}, interfaz del servicio cliente-operador
+	\item \textit{ServicioSrOperadorInterface}, interfaz del servicio servidor-operador
+	\item \textit{ServicioDiscoClienteInterface}, interfaz del servicio de disco del cliente
+	\item \textbf{Utils}, clase con métodos genéricos para el uso por parte de la aplicación
+\end{compactitem}
+
+La carpeta servidor, contiene el código necesario para lanzar el servidor y la implementación del servicio de datos, el servicio de autenticación y el servicio gestor.
+
+\begin{compactitem}
+	\item \textbf{Servidor}, clase que lanza el servidor, crea los objetos remotos y los publica en el registro RMI
+	\item \textbf{ServicioAutenticacionImpl}, clase que implementa el servicio de autenticación
+	\item \textbf{ServicioDatosImpl}, clase que implementa el servicio de datos
+	\item \textbf{ServicioGestorImpl}, clase que implementa el servicio gestor
+\end{compactitem}
+
+La carpeta repositorio contiene el código necesario para lanzar los repositorios y la implementación de los servicios operador-cliente y operador-servidor.
+
+\begin{compactitem}
+	\item \textbf{Repositorio}, clase que lanza el repositorio y genera el menú para operar con el, publica los objetos remotos.
+	\item \textbf{ServicioClOperadorImpl}, clase que implementa el servicio cliente-operador
+	\item \textbf{ServicioSrOperadorImpl}, clase que implementa el servicio servidor-operador
+\end{compactitem}
+
+La carpeta cliente contiene el código necesario para lanzar los clientes y la implementación de la interfaz remota del servicio de disco del cliente
+
+\begin{compactitem}
+	\item \textbf{Cliente}, clase que lanza el cliente, genera el menú para poder operar con el y publica los objetos remotos
+	\item \textbf{ServicioDiscoClienteImpl}, clase que implementa el servicio de disco del cliente a través del cual se recibirán ficheros de la nube
+\end{compactitem}
+
+\section{Modelo de datos}
+
+El modelo de datos esta basado en la api Collections de Java.
+
+Cada elemento del sistema sera identificado por un id numérico que formara parte del objeto como atributo.
+
+En el servicio de datos se almacenara la siguiente información
+
+Lista con todos los clientes registrados en la aplicación.
+Relación de nombre de usuario con id de clientes con datos de cliente en una HashMap<String, Integer> de la que se podrá obtener el id de un cliente dado su nombre de usuario.
+Relación de id de usuario con el objeto de tipo Cliente que tiene toda la información referente a cada cliente.
+Variable sesioncli con el ultimo identificador de cliente asignado, a cada cliente nuevo se le asignara como identificador el valor de esta variable y esta se incrementara en espera del próximo cliente.
+
+La clase Cliente del paquete comun tiene la información propia del cliente y dos mapas indexadas por el nombre del fichero, una con los metadatos de los ficheros cuyo propietario es el cliente y otra con los metadatos de los ficheros que se han compartido con el cliente. Las operaciones con los datos de los ficheros se realizaran mediante llamadas a metodos de esta clase y en ningún momento accediendo directamente a las collection que albergan los datos.
