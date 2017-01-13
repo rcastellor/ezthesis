@@ -13,6 +13,7 @@
 	\item El sistema publica en el registro RMI el servicio gestor
 	\item El caso de uso esta completo, el sistema entra en modo escucha de comandos
 \end{compactenum}
+\includegraphics[width=0.8\linewidth]{inicio_servidor.png}
 
 \section{Registrar/autenticar repositorio}
 
@@ -44,12 +45,14 @@
 	\item El sistema crea un objeto serializable en memoria con el fichero a enviar
 	\item El sistema busca el objeto distribuido gestor
 	\item El sistema consulta al servicio gestor por la dirección del servicio operador cliente del repositorio
+	\item El sistema gestor consulta al servicio de datos por el id del repositorio
 	\item El sistema busca el objeto distribuido cliente operador del repositorio
-	\item El sistema envia el objeto Serializable al repositorio
+	\item El sistema envia el objeto de tipo Fichero Serializable al repositorio mediante el servicio operador cliente
 	\item El sistema notifica al sistema gestor el resultado del envío
-	\item El servicio gestor actualiza el servicio de datos con la localización del archivo
+	\item El servicio gestor actualiza el servicio de datos con el nuevo fichero
 	\item El sistema notifica al usuario el resultado de la operación
 \end{compactenum}
+\includegraphics[width=\linewidth]{ds_subirfichero.png}
 
 \section{Descargar fichero desde la nube}
 \begin{compactenum}
