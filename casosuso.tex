@@ -1,5 +1,7 @@
 \chapter{Casos de uso}
 
+En este capitulo repasamos los principales casos de uso de la aplicación, caben analizar muchos más escenarios y en sucesivas iteraciones de desarrollo se podría ampliar el numero de casos de uso asi como logar un mayor nivel de detalle de los expuestos en el documento.
+
 \section{Inicio del servidor}
 
 \begin{compactenum}
@@ -22,9 +24,11 @@
 	\item El sistema solicita al usuario los datos de autenticación
 	\item El sistema busca el servicio de autenticación en el registro RMI
 	\item El sistema comprueba los parámetros de entrada con el objeto remoto
-	\item El sistema publica los objetos remotos para operar con el servidor en el registro
+	\item El sistema publica el servicio operador cliente
+	\item El sistema publica el servicio operador servidor
 	\item El sistema entra en modo consulta para operaciones con el repositorio activo
 \end{compactenum}
+\includegraphics[width=0.8\linewidth]{registro_rep.png}
 
 \section{Registrar/autenticar cliente}
 
@@ -36,6 +40,7 @@
 	\item El sistema publica los objetos remotos para operar con el servidor en el registro
 	\item El sistema entra en modo consulta para operaciones con el cliente activo
 \end{compactenum}
+\includegraphics[width=0.8\linewidth]{registro_cli.png}
 
 \section{Subir fichero a la nube}
 \begin{compactenum}
@@ -48,6 +53,7 @@
 	\item El sistema gestor consulta al servicio de datos por el id del repositorio
 	\item El sistema busca el objeto distribuido cliente operador del repositorio
 	\item El sistema envia el objeto de tipo Fichero Serializable al repositorio mediante el servicio operador cliente
+	\item El servicio operador-cliente guarda el fichero en disco con el metodo escribirEn del objeto Fichero
 	\item El sistema notifica al sistema gestor el resultado del envío
 	\item El servicio gestor actualiza el servicio de datos con el nuevo fichero
 	\item El sistema notifica al usuario el resultado de la operación
@@ -60,8 +66,13 @@
 \item El sistema pregunta al servicio gestor por los ficheros a los que tiene acceso el cliente
 \item El sistema pregunta al usuario cual de los ficheros quiere descargar
 \item El usuario selecciona un fichero de la lista
-\item El sistema pide al servicio gestor que se envie el fichero al servicio disco cliente
+\item El sistema busca en el registro el objeto operador cliente del repositorio
+\item El sistema pide al objeto operador cliente que envie el fichero mediante el servicio disco cliente
+\item El servicio operador busca el servicio disco cliente
+\item El servicio operador cliente envia el fichero a traves del metodo del servicio disco cliente
+\item El servicio disco cliente guarda el fichero en el disco local del cliente
 \end{compactenum}
+\includegraphics[width=\linewidth]{ds_bajarfichero.png}
 
 \section{Borrar fichero de la nube}
 \begin{compactenum}
