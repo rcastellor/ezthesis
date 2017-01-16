@@ -1,6 +1,6 @@
 \chapter{Casos de uso}
 
-En este capitulo repasamos los principales casos de uso de la aplicación, caben analizar muchos más escenarios y en sucesivas iteraciones de desarrollo se podría ampliar el numero de casos de uso asi como logar un mayor nivel de detalle de los expuestos en el documento.
+En este capitulo repasamos los principales casos de uso de la aplicación, caben analizar muchos más escenarios y en sucesivas iteraciones de desarrollo se podría ampliar el numero de casos de uso así como logar un mayor nivel de detalle de los expuestos en el documento.
 
 \section{Inicio del servidor}
 
@@ -52,8 +52,8 @@ En este capitulo repasamos los principales casos de uso de la aplicación, caben
 	\item El sistema consulta al servicio gestor por la dirección del servicio operador cliente del repositorio
 	\item El sistema gestor consulta al servicio de datos por el id del repositorio
 	\item El sistema busca el objeto distribuido cliente operador del repositorio
-	\item El sistema envia el objeto de tipo Fichero Serializable al repositorio mediante el servicio operador cliente
-	\item El servicio operador-cliente guarda el fichero en disco con el metodo escribirEn del objeto Fichero
+	\item El sistema envía el objeto de tipo Fichero Serializable al repositorio mediante el servicio operador cliente
+	\item El servicio operador-cliente guarda el fichero en disco con el método escribirEn del objeto Fichero
 	\item El sistema notifica al sistema gestor el resultado del envío
 	\item El servicio gestor actualiza el servicio de datos con el nuevo fichero
 	\item El sistema notifica al usuario el resultado de la operación
@@ -62,29 +62,27 @@ En este capitulo repasamos los principales casos de uso de la aplicación, caben
 
 \section{Descargar fichero desde la nube}
 \begin{compactenum}
-\item El caso de uso comienza cuando el usuario selecciona la opcion de descargar fichero
+\item El caso de uso comienza cuando el usuario selecciona la opción de descargar fichero
 \item El sistema pregunta al servicio gestor por los ficheros a los que tiene acceso el cliente
 \item El sistema pregunta al usuario cual de los ficheros quiere descargar
 \item El usuario selecciona un fichero de la lista
 \item El sistema busca en el registro el objeto operador cliente del repositorio
-\item El sistema pide al objeto operador cliente que envie el fichero mediante el servicio disco cliente
+\item El sistema pide al objeto operador cliente que envíe el fichero mediante el servicio disco cliente
 \item El servicio operador busca el servicio disco cliente
-\item El servicio operador cliente envia el fichero a traves del metodo del servicio disco cliente
+\item El servicio operador cliente envía el fichero a través del método del servicio disco cliente
 \item El servicio disco cliente guarda el fichero en el disco local del cliente
 \end{compactenum}
 \includegraphics[width=\linewidth]{ds_bajarfichero.png}
 
 \section{Borrar fichero de la nube}
 \begin{compactenum}
-\item El caso de uso comienza cuando el usuario seleccion la opción de borrar fichero
+\item El caso de uso comienza cuando el usuario selección la opción de borrar fichero
 \item El sistema pregunta al servicio gestor por los ficheros del usuario
 \item El sistema pregunta al usuario cual es el fichero que quiere borrar
 \item El sistema pide al servicio gestor la url del objeto distribuido del servicio operador-cliente de su repositorio
 \item El sistema busca en el registro RMI el servicio operador-cliente del repositorio donde esta el fichero
 \item El sistema pide al servicio operador-cliente que borre el fichero
 \item El sistema notifica al servicio gestor del resultado de la operación de borrado
-\item El servicio gestor notifica al servicio de datos que el fichero se ha borrado fisicamente
+\item El servicio gestor notifica al servicio de datos que el fichero se ha borrado fisícamente
 \end{compactenum}
 
-
-\section{Compartir fichero con otro cliente}

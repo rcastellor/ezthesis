@@ -4,7 +4,6 @@ En este capitulo mostraremos ejemplos de uso de la aplicación, para los ejemplo
 Este sera el diagrama de los elementos en las pruebas.
 \includegraphics[width=0.8\linewidth]{escenario_pruebas.png}
 
-
 \section{Operaciones del servidor}
 \begin{lstlisting}[language=bash,frame=single,texcl=true,basicstyle=\small]
 ============Menu Servidor============
@@ -13,7 +12,8 @@ Este sera el diagrama de los elementos en las pruebas.
 3-Listar Parejas Repositorio-Cliente
 4-Salir
 ============Menu Servidor============
-Seleccione una opcion: 1
+Seleccione una opcion: 1   
+-- Clientes registrados en el sistema --
 Cliente: 0-cliente1
 Cliente: 1-cliente2
 Cliente: 2-cliente3
@@ -28,7 +28,7 @@ Cliente: 6-cliente7
 4-Salir
 ============Menu Servidor============
 Seleccione una opcion: 2
--- Repositorios registrados en el sistema: 
+-- Repositorios registrados en el sistema --
 Repositorio: 0-repositorio1
 Repositorio: 1-repositorio2
 Repositorio: 2-repositorio3
@@ -40,13 +40,14 @@ Repositorio: 3-repositorio4
 4-Salir
 ============Menu Servidor============
 Seleccione una opcion: 3
-Cliente: 0-cliente1<->0-repositorio1
-Cliente: 1-cliente2<->1-repositorio2
-Cliente: 2-cliente3<->2-repositorio3
-Cliente: 3-cliente4<->3-repositorio4
-Cliente: 4-cliente5<->0-repositorio1
-Cliente: 5-cliente6<->1-repositorio2
-Cliente: 6-cliente7<->2-repositorio3
+-- Clientes - repositorio registrados en el sistema --
+Cliente: 0-cliente1 -> 0-repositorio1
+Cliente: 1-cliente2 -> 1-repositorio2
+Cliente: 2-cliente3 -> 2-repositorio3
+Cliente: 3-cliente4 -> 3-repositorio4
+Cliente: 4-cliente5 -> 0-repositorio1
+Cliente: 5-cliente6 -> 1-repositorio2
+Cliente: 6-cliente7 -> 2-repositorio3
 ============Menu Servidor============
 1-Listar Clientes
 2-Listar Repositorios
@@ -59,12 +60,193 @@ Seleccione una opcion:
 
 \section{Operaciones del repositorio}
 Este es un ejemplo de las operaciones disponibles en los repositorios.
+\subsection{Registro nuevo repositorio}
+\begin{lstlisting}[language=bash,frame=single,texcl=true,basicstyle=\small]
+============Menu Repositorio============
+1-Registrar nuevo repositorio
+2-Autenticarse en el sistema
+3-Salir
+============Menu Repositorio============
+Seleccione una opcion: 1
+Introduzca el usuario: repositorio1
+Introduzca la contraseña: rep1
+Introduzca la contraseña de nuevo: rep1
+============ repositorio0 ============
+1-Listar Clientes
+2-Listar ficheros del Cliente
+3-Salir
+============ repositorio0 ============
+Seleccione una opcion: 
+\end{lstlisting}
+\subsection{Operaciones repositorio}
+\begin{lstlisting}[language=bash,frame=single,texcl=true,basicstyle=\small]
+============ repositorio0 ============
+1-Listar Clientes
+2-Listar ficheros del Cliente
+3-Salir
+============ repositorio0 ============
+Seleccione una opcion: 1   
+Listado de clientes en el repositorio
+Cliente: 0-cliente1
+Cliente: 4-cliente5
+============ repositorio0 ============
+1-Listar Clientes
+2-Listar ficheros del Cliente
+3-Salir
+============ repositorio0 ============
+Seleccione una opcion: 2
+Clientes validos: 
+0 4 
+Seleccione un cliente: 0
+Fichero: test1.txt
+Fichero: test2.txt
+============ repositorio0 ============
+1-Listar Clientes
+2-Listar ficheros del Cliente
+3-Salir
+============ repositorio0 ============
+Seleccione una opcion: 
+\end{lstlisting}
 
-\section{Operación compartir fichero}
-Ejemplo de la compartición de un fichero de usuario.
-
-\section{Operación subir fichero}
-Un usuario podra subir un fichero siguiendo estos pasos.
-
-\section{Operación descargar fichero}
-Un usuario podra descargar un fichero de la nube siguiendo estos pasos.
+\section{Cliente}
+Ejemplo de uso del cliente
+\subsection{Registro nuevo cliente}
+\begin{lstlisting}[language=bash,frame=single,texcl=true,basicstyle=\small]
+============Menu Cliente============
+1-Registrar nuevo cliente
+2-Autenticarse en el sistema
+3-Salir
+============Menu Cliente============
+Seleccione una opcion: 1
+Introduzca usuario: cliente3
+Introduzca contraseña: cli3
+Introduzca la contraseña de nuevo: cli3
+============-cliente3-============
+1-Subir fichero
+2-Bajar fichero
+3-Borrar fichero
+4-Compartir ficheros
+5-Listar ficheros
+6-Listar clientes del sistema
+7-Salir
+============-cliente3-============
+Seleccione una opcion: 
+\end{lstlisting}
+\subsection{Operación subir fichero}
+\begin{lstlisting}[language=bash,frame=single,texcl=true,basicstyle=\small]
+============-cliente3-============
+1-Subir fichero
+2-Bajar fichero
+3-Borrar fichero
+4-Compartir ficheros
+5-Listar ficheros
+6-Listar clientes del sistema
+7-Salir
+============-cliente3-============
+Seleccione una opcion: 1
+Introduzca fichero a enviar: test1.txt
+Fichero enviado correctamente a la nube
+============-cliente3-============
+1-Subir fichero
+2-Bajar fichero
+3-Borrar fichero
+4-Compartir ficheros
+5-Listar ficheros
+6-Listar clientes del sistema
+7-Salir
+============-cliente3-============
+Seleccione una opcion:
+\end{lstlisting}
+\subsection{Operación descargar fichero}
+\begin{lstlisting}[language=bash,frame=single,texcl=true,basicstyle=\small]
+============-cliente3-============
+1-Subir fichero
+2-Bajar fichero
+3-Borrar fichero
+4-Compartir ficheros
+5-Listar ficheros
+6-Listar clientes del sistema
+7-Salir
+============-cliente3-============
+Seleccione una opcion: 2
+test1.txt 
+Seleccione el fichero que quiere recibir: test1.txt
+Escribiendo fichero en test1.txt
+============-cliente3-============
+1-Subir fichero
+2-Bajar fichero
+3-Borrar fichero
+4-Compartir ficheros
+5-Listar ficheros
+6-Listar clientes del sistema
+7-Salir
+============-cliente3-============
+Seleccione una opcion: 
+\end{lstlisting}
+\subsection{Operación borrar un fichero}
+\begin{lstlisting}[language=bash,frame=single,texcl=true,basicstyle=\small]
+============-cliente3-============
+1-Subir fichero
+2-Bajar fichero
+3-Borrar fichero
+4-Compartir ficheros
+5-Listar ficheros
+6-Listar clientes del sistema
+7-Salir
+============-cliente3-============
+Seleccione una opcion: 3
+test1.txt 
+Seleccione el fichero que quiere eliminar: test1.txt
+============-cliente3-============
+1-Subir fichero
+2-Bajar fichero
+3-Borrar fichero
+4-Compartir ficheros
+5-Listar ficheros
+6-Listar clientes del sistema
+7-Salir
+============-cliente3-============
+Seleccione una opcion:
+\end{lstlisting}
+\subsection{Otras operaciones}
+\begin{lstlisting}[language=bash,frame=single,texcl=true,basicstyle=\small]
+============-cliente1-============
+1-Subir fichero
+2-Bajar fichero
+3-Borrar fichero
+4-Compartir ficheros
+5-Listar ficheros
+6-Listar clientes del sistema
+7-Salir
+============-cliente1-============
+Seleccione una opcion: 5   
+Fichero: test1.txt
+Fichero: test2.txt
+============-cliente1-============
+1-Subir fichero
+2-Bajar fichero
+3-Borrar fichero
+4-Compartir ficheros
+5-Listar ficheros
+6-Listar clientes del sistema
+7-Salir
+============-cliente1-============
+Seleccione una opcion: 6
+Cliente: 0-cliente1
+Cliente: 1-cliente2
+Cliente: 2-cliente3
+Cliente: 3-cliente4
+Cliente: 4-cliente5
+Cliente: 5-cliente6
+Cliente: 6-cliente7
+============-cliente1-============
+1-Subir fichero
+2-Bajar fichero
+3-Borrar fichero
+4-Compartir ficheros
+5-Listar ficheros
+6-Listar clientes del sistema
+7-Salir
+============-cliente1-============
+Seleccione una opcion:
+\end{lstlisting}

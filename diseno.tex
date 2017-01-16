@@ -5,7 +5,7 @@
 Las Carpeta comun contiene las clases e interfaces comunes al resto del proyecto.
 
 \begin{compactitem}
-	\item \textbf{Cliente}, clase con la información de los clientes, el usuario, el id y listas con los ficheros del cliente
+	\item \textbf{Cliente}, clase con la información de los clientes, el usuario, el id y lista con los ficheros del cliente
 	\item \textbf{Fichero}, clase proporcionada por el equipo docente para enviar los ficheros
 	\item \textbf{GUI}, clase con métodos genéricos para mostrar por pantalla información y recoger las entradas del usuario
 	\item \textbf{Logger}, clase con métodos para volcar a un fichero log de la aplicación y de esta forma no mezclarse con la interfaz del usuario
@@ -67,7 +67,7 @@ En el servicio de datos se almacenara la siguiente información:
 \item Variable numerica que se utilizara para decidir a que repositorio asignar cada nuevo cliente
 \end{compactitem}
 
-La clase Cliente del paquete comun tiene la información propia del cliente y dos mapas indexadas por el nombre del fichero, una con los metadatos de los ficheros cuyo propietario es el cliente y otra con los metadatos de los ficheros que se han compartido con el cliente. Las operaciones con los datos de los ficheros se realizaran mediante llamadas a metodos de esta clase y en ningún momento accediendo directamente a las collection que albergan los datos, (ver apartado \ref{sec:consideraciones_datos})
+La clase Cliente del paquete comun tiene la información propia del cliente y un mapa de los metadatos indexado por el nombre del fichero. Las operaciones con los datos de los ficheros se realizaran mediante llamadas a metodos de esta clase y en ningún momento accediendo directamente a las collection que albergan los datos, (ver apartado \ref{sec:consideraciones_datos})
 
 Esta información se persistirá a disco cuando se cierre el sistema para guardar el estado del servidor.
 
