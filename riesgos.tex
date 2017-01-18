@@ -5,7 +5,7 @@ El proceso para desarrollo de la practica ha sido un proceso incremental por lo 
 \section{Revisión de decisiones de diseño}
 
 \begin{enumerate}\label{sec:consideraciones_datos}
-	\item La clase cliente que mantiene la información de los clientes en el servicio de datos necesita una refactorización, en muchos métodos remotos estamos enviando toda la información del cliente, eso no esta optimizado y en sucesiones iteraciones del desarrollo habría que optimizarlo para enviar solo la información necesaria
+	\item La clase cliente del paquete común necesita una refactorización, en muchos métodos remotos estamos enviando toda la información del cliente, eso no esta optimizado y en sucesiones iteraciones del desarrollo habría que optimizarlo para enviar solo la información necesaria
 	\item En la aplicación no se comprueba si los servicios están publicados correctamente y se da por supuesto que todos los objetos remotos están operativos. En siguientes iteraciones del proceso de desarrollo habría que ver que implicaciones tendría tener un nivel mas fino de control de errores.
 	\item El repositorio crea una carpeta con su id para almacenar los ficheros, simplemente es para facilitar las pruebas con varios repositorios lanzados desde la misma carpeta.
 \end{enumerate}

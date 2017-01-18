@@ -43,12 +43,16 @@ La carpeta cliente contiene el código necesario para lanzar los clientes y la i
 	\item \textbf{ServicioDiscoClienteImpl}, clase que implementa el servicio de disco del cliente a través del cual se recibirán ficheros de la nube
 \end{compactitem}
 
+\pagebreak
+
 \section{Interfaces remotas}
 
-\includegraphics[width=0.75\linewidth]{interfaces.png}
+Esta sera la especificación publicada en el entorno RMI, una vez localizados los objetos remotos se podra acceder a ellos a traves de estas interfaces.
 
-\section{Objetos modelo de datos}
-\includegraphics[width=0.75\linewidth]{definicion_datos.png}
+\includegraphics[width=0.5\linewidth]{interfaces.png}
+
+\section{Servicio de datos}
+\includegraphics[width=0.5\linewidth]{dc_servicio_datos.png}
 
 El modelo de datos esta basado en la api Collections de Java.
 
@@ -71,9 +75,9 @@ La clase Cliente del paquete comun tiene la información propia del cliente y un
 
 Esta información se persistirá a disco cuando se cierre el sistema para guardar el estado del servidor.
 
-\section{Entorno del servidor}
+%%\section{Entorno del servidor}
 
-El entorno del servidor usara las siguientes clases
+%%El entorno del servidor usara las siguientes clases
 
-\centerline{\includegraphics[width=0.5\linewidth]{servidor.png}}
+%%\centerline{\includegraphics[width=0.5\linewidth]{servidor.png}}
 
